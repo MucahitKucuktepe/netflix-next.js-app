@@ -73,7 +73,7 @@ const Login = () => {
                 type="button"
                 onClick={signUpProvider}
               >
-                Continue with Google
+                Continue with Google 
                 <GoogleIcon color="currentColor" />
               </button>
             </form>
