@@ -4,22 +4,22 @@ import GoogleIcon from "@/public/icons/GoogleIcon";
 import React, { useState } from "react";
 
 const Register = () => {
-  const {signUpProvider, createUser}= useAuthContext()
+  const { signUpProvider, createUser } = useAuthContext();
   const [info, setInfo] = useState({
     firstName: "",
     lastName: "",
     email: "",
-    password: "",
+    password: "", 
   });
   const handleChange = (e) => {
     setInfo({ ...info, [e.target.name]: e.target.value });
   };
- const handleSubmit=(e)=>{
-  const {email,password,firstName,lastName}=info
-  const displayName= `${firstName}+${lastName}`
-  e.preventDefault()
-  createUser(email,password,displayName)
- }
+  const handleSubmit = (e) => {
+    const { email, password, firstName, lastName } = info;
+    const displayName = `${firstName} ${lastName}`;
+    e.preventDefault();
+    createUser(email, password, displayName);
+  };
   return (
     <div className="relative h-screen w-full bg-[url('/images/hero.jpg')] bg-no-repeat bg-center bg-fixed bg-cover">
       <div className="bg-black w-full h-full lg:bg-opacity-50">
@@ -78,7 +78,8 @@ const Register = () => {
               </button>
               <button
                 className="flex justify-between text-center items-center btn-danger"
-                type="button" onClick={signUpProvider}
+                type="button"
+                onClick={signUpProvider}
               >
                 Continue with Google
                 <GoogleIcon color="currentColor" />
